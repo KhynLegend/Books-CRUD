@@ -1,0 +1,72 @@
+--------------------------------------------------------
+--  File created - Tuesday-March-19-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table BOOKS
+--------------------------------------------------------
+
+  CREATE TABLE "KHYN"."BOOKS" 
+   (	"BOOK_ID" NUMBER, 
+	"BOOK_NAME" VARCHAR2(256 BYTE), 
+	"BOOK_AUTHOR" VARCHAR2(256 BYTE), 
+	"BOOK_GENRE" VARCHAR2(256 BYTE), 
+	"BOOK_PAGENUMBER" NUMBER, 
+	"BOOK_PRICE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into KHYN.BOOKS
+SET DEFINE OFF;
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (2,'asdasd','khyn','5asd',12,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (3,'Another Book','Lol','hello',12,123);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (4,'Hello','World','Please',12,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (5,'Another Shit','dasd','asdasd',12,123);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (6,'asdasd','asdasd','asdas',11,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (7,'asdasd','asdasd','as',123,123);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (8,'khyn','qwdasd','123asd',1212,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (10,'test','test','test',1,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (11,'test','test','test',12,123);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (13,'asdasd','123','1',123,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (14,'asdasd','asd','asd',1,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (15,'khyn','asd','asd',1,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (26,'asd','adasd','asd',1,1);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (12,'asda','asd','sd',123,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (24,'asdasd','asd','asd',1,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (21,'asdasd','asdad','asd',1,23);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (22,'asdasd','sdasd','asd',123,2);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (25,'asdasd','asd','as',2,12);
+Insert into KHYN.BOOKS (BOOK_ID,BOOK_NAME,BOOK_AUTHOR,BOOK_GENRE,BOOK_PAGENUMBER,BOOK_PRICE) values (1,'Khyns Diary','Khyn Antoque','Horror',123,568);
+--------------------------------------------------------
+--  DDL for Index BOOKS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "KHYN"."BOOKS_PK" ON "KHYN"."BOOKS" ("BOOK_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Trigger BI_BOOKS
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "KHYN"."BI_BOOKS" 
+  before insert on "BOOKS"               
+  for each row  
+begin   
+    select "BOOKS_SEQ".nextval into :NEW.BOOK_ID from dual; 
+end; 
+
+/
+ALTER TRIGGER "KHYN"."BI_BOOKS" ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BOOKS
+--------------------------------------------------------
+
+  ALTER TABLE "KHYN"."BOOKS" ADD CONSTRAINT "BOOKS_PK" PRIMARY KEY ("BOOK_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "KHYN"."BOOKS" MODIFY ("BOOK_ID" NOT NULL ENABLE);
