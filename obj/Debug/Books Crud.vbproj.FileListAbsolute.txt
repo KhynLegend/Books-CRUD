@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\Books Crud\bin\Debug\Books Crud.exe.config
+C:\Users\user\source\repos\Books Crud\bin\Debug\Books Crud.exe
+C:\Users\user\source\repos\Books Crud\bin\Debug\Books Crud.pdb
+C:\Users\user\source\repos\Books Crud\bin\Debug\Books Crud.xml
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.vbprojAssemblyReference.cache
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books_Crud.mainForm.resources
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books_Crud.Resources.resources
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.vbproj.GenerateResource.cache
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.vbproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.exe
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.xml
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.pdb
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books_Crud.Manager.resources
+C:\Users\user\source\repos\Books Crud\bin\Debug\Oracle.VsDevTools.EntityFramework.15.0.dll
+C:\Users\user\source\repos\Books Crud\obj\Debug\Books Crud.vbproj.CopyComplete
